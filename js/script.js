@@ -1,26 +1,8 @@
-$(document).ready(function() {
+var toggleMenu = document.getElementById("toggle_menu");
+var menuEl = document.getElementById("header");
 
-    btnUp = $('#button_up_link')
+toggleMenu.addEventListener('click', function() {
+    this.classList.toggle('menu_active');
+    menuEl.classList.toggle('menu_active');
 
-    // smooth scrolling
-    $(".nav_link").on("click", function(e) {
-        e.preventDefault();
-        let id = $(this).attr('href');
-        let top = $(id).offset().top;
-        $('body,html').animate({ scrollTop: top }, 900);
-    });
-
-    // toggle bg color of menu items
-    $('.menu_item').click(function(e) {
-        e.preventDefault();
-        $('.menu_item').removeClass('active');
-        $(this).addClass('active');
-    });
-
-    // toggle class menu_active
-    $('.toggle_button, .dark_layer, .menu_item').click(function(e) {
-        e.preventDefault();
-        $('body').toggleClass('menu_active')
-    });
-
-});
+})
