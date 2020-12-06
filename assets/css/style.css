@@ -42,6 +42,19 @@
   @media (min-width: 1200px) {
     .body .container {
       max-width: 1260px; } }
+  .body.menu_active {
+    overflow: hidden; }
+    .body.menu_active .header {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0); }
+    .body.menu_active #toggle_menu div:not(:nth-child(2)) {
+      opacity: 0; }
+    .body.menu_active #toggle_menu div:nth-child(2) {
+      position: relative;
+      transform: rotate(45deg); }
+      .body.menu_active #toggle_menu div:nth-child(2)::after {
+        transform: rotate(-90deg); }
 
 section {
   position: relative; }
@@ -88,15 +101,11 @@ section {
       .header .menu .menu_item a {
         font-size: 30px;
         letter-spacing: 0.03em;
-        color: #fff; }
-      .header.menu_active {
-        visibility: visible;
-        opacity: 1;
-        transform: translateY(0); } }
+        color: #fff; } }
 
 .section_intro {
   padding: 0;
-  min-height: 100vh;
+  height: 100vh;
   position: relative; }
   .section_intro video {
     width: 100%;
@@ -171,14 +180,7 @@ section {
             width: 100%;
             height: 100%;
             background-color: #fff;
-            transition: .3s; }
-        .section_intro #toggle_menu.menu_active div:not(:nth-child(2)) {
-          opacity: 0; }
-        .section_intro #toggle_menu.menu_active div:nth-child(2) {
-          position: relative;
-          transform: rotate(45deg); }
-          .section_intro #toggle_menu.menu_active div:nth-child(2)::after {
-            transform: rotate(-90deg); } }
+            transition: .3s; } }
 
 .section_promo {
   background-color: #B80F31;
@@ -601,14 +603,10 @@ section {
     .section_footer .contacts_wrap {
       border-left: 1px solid #333333; }
       .section_footer .contacts_wrap .phones_bar {
-        padding-left: 48px;
-        padding-bottom: 48px;
-        padding-right: 48px;
+        padding: 48px;
         border-bottom: 1px solid #333333; }
       .section_footer .contacts_wrap .social_bar {
-        padding-left: 48px;
-        padding-top: 48px;
-        padding-right: 48px; } }
+        padding: 48px; } }
   @media (max-width: 1199.98px) {
     .section_footer .brand_title {
       text-align: center; }

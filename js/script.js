@@ -1,8 +1,14 @@
-var toggleMenu = document.getElementById("toggle_menu");
-var menuEl = document.getElementById("header");
+var toggleMenu = document.getElementById('toggle_menu');
+var menuEl = document.getElementById('header');
+var navLinks = document.querySelectorAll('.nav_link');
+
 
 toggleMenu.addEventListener('click', function() {
-    this.classList.toggle('menu_active');
-    menuEl.classList.toggle('menu_active');
-
+    document.body.classList.toggle('menu_active');
 })
+
+navLinks.forEach(element => {
+    element.addEventListener('click', function() {
+        document.body.classList.toggle('menu_active');
+    })
+});
